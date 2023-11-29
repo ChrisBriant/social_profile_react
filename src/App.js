@@ -1,23 +1,35 @@
-import logo from './logo.svg';
+import { useEffect } from 'react';
+import { getProfile } from './network/apiActions';
 import './App.css';
+import { useState } from 'react';
+import SocialPanel from './components/SocialPanel';
 
 function App() {
+  const [profile, setProfile] = useState(null);
+
+  useEffect(() => {
+    getProfile().then((data) => {
+      console.log('Profile', data);
+      setProfile(data);
+    });
+  },[]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <h1>Social Profile</h1>
+        <p>Refresh to generate a fake social profile!</p>
       </header>
+      <main>
+        {
+          profile
+          ?  <SocialPanel profile={profile} />
+          : <p>Loading...</p>
+        }
+      </main>
+      <footer>
+        <p>By Chris Briant {new Date().getFullYear()}</p>
+      </footer>
     </div>
   );
 }
