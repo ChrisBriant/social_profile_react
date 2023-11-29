@@ -30,7 +30,6 @@ header {
   flex: 0 10vh;
   text-align: center;
   color: var(--header-font-color);
-  /* box-shadow: 0px 3px 3px #333; */
   height: 10vh;
   width: 100vw;
 }
@@ -82,27 +81,19 @@ main {
 .social-panel .photo-panel .details .profile-item{
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
 }
 
 .social-panel .photo-panel .details .profile-item p{
   width: 50%;
 }
 
-/* .social-panel .photo-panel .details .profile-item:nth-child(1) {
-  width: 50%;
-}
 
-.social-panel .photo-panel .details .profile-item:nth-child(2) {
-  width: 50%;
-} */
 
 
 footer {
   flex: 0 10vh;
   padding-top: 20px;
   text-align: center;
-  /* box-shadow: 0px -3px 3px #333; */
   height: 10vh;
   width: 100vw;
 }
